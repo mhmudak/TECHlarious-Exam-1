@@ -91,6 +91,8 @@
                 document.getElementById('p1').value = 100;
                 document.getElementById('p2').value = 100;
                 newGameBtn.style.display = "none";
+                document.getElementById("lastTitle").innerText = "Battle log";
+            document.getElementById('battles').innerText = "";
             });
         }
         
