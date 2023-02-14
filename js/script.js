@@ -24,11 +24,16 @@
             attacks2.innerText = activity2;
             battleList.appendChild(attacks2);
             
-            // if(v1 = 0){
-            //     alert("Game Over, you won!");
-            // } else {
-            //     alert("Game Over, Monster won!");
-            // }
+            if(document.getElementById('p1').value === 0){
+                document.getElementById("lastTitle").innerText = "Game Over";
+                document.getElementById('battles').innerText = "You Won !";
+                startNewGame();
+            } else if (document.getElementById('p2').value === 0) {
+                document.getElementById("lastTitle").innerText = "Game Over";
+                document.getElementById('battles').innerText = "Monster Won !";
+                startNewGame();
+            }
+            
             
             // var yy = v1 - x;
             // document.getElementById("oo").innerHTML = yy;
@@ -70,14 +75,18 @@
             
             document.getElementById("lastTitle").innerText = "Game Over";
             document.getElementById('battles').innerText = "Monster Won !";
+            startNewGame();
             
+        }
+        
+        function startNewGame(){
             const btnList = document.querySelector("#battle-history");
             
             const newGameBtn = document.createElement("button");
             newGameBtn.className = "newGameBtn";
             newGameBtn.innerText = "New Game";
             btnList.appendChild(newGameBtn);
-
+            
             newGameBtn.addEventListener("click", () => {
                 document.getElementById('p1').value = 100;
                 document.getElementById('p2').value = 100;
