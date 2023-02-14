@@ -72,7 +72,6 @@
             document.getElementById('p1').value;
             document.getElementById('p2').value = 0;
             
-            
             document.getElementById("lastTitle").innerText = "Game Over";
             document.getElementById('battles').innerText = "Monster Won !";
             startNewGame();
@@ -92,7 +91,7 @@
                 document.getElementById('p2').value = 100;
                 newGameBtn.style.display = "none";
                 document.getElementById("lastTitle").innerText = "Battle log";
-            document.getElementById('battles').innerText = "";
+                document.getElementById('battles').innerText = "";
             });
         }
         
