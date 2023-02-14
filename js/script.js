@@ -90,6 +90,7 @@
             newGameBtn.addEventListener("click", () => {
                 document.getElementById('p1').value = 100;
                 document.getElementById('p2').value = 100;
+                newGameBtn.style.display = "none";
             });
         }
         
