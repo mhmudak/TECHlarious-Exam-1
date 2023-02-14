@@ -50,7 +50,7 @@ div#btns{
     flex-wrap: wrap;
     justify-content: space-between;
 }
-div#btns input{
+div#btns input, .newGameBtn{
     width: 200px;
     padding: 15px 0px;
     margin-bottom: 15px;

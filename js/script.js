@@ -64,16 +64,23 @@
         }
         
         function giveUp(){
-            v1=document.getElementById('p2').value = 0;
+            document.getElementById('p1').value;
+            document.getElementById('p2').value = 0;
+            
             
             document.getElementById("lastTitle").innerText = "Game Over";
             document.getElementById('battles').innerText = "Monster Won !";
             
-            const newBtn = document.getElementById("history-part-1").innerHTML + " " + y;
-            const btnList = document.querySelector("#btnn");
+            const btnList = document.querySelector("#battle-history");
             
             const newGameBtn = document.createElement("button");
-            newGameBtn.innerText = newBtn;
+            newGameBtn.className = "newGameBtn";
+            newGameBtn.innerText = "New Game";
             btnList.appendChild(newGameBtn);
+
+            newGameBtn.addEventListener("click", () => {
+                document.getElementById('p1').value = 100;
+                document.getElementById('p2').value = 100;
+            });
         }
         
