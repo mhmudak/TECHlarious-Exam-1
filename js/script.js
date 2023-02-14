@@ -76,6 +76,11 @@
             document.getElementById('battles').innerText = "Monster Won !";
             startNewGame();
             
+            // var giveUpBtn = document.getElementById("gvup");
+            // giveUpBtn.addEventListener("click", () => {
+                
+            //     gvup.style.pointerEvents = "none";
+            // });
         }
         
         function startNewGame(){
