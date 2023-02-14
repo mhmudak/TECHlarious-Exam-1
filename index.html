@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+    <title>Document</title>
+    <script>
+        function defineMinMax(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        
+        function decrease() {
+            var v1=document.getElementById('p1').value;
+            var v2=document.getElementById('p2').value;
+            var x = defineMinMax(2,14);
+            var y = defineMinMax(2,25);
+            
+            document.getElementById("p1").value= v1 - x;
+            document.getElementById("p2").value= v2 - y;
+            
+            
+            const activity1 = "Monster attacks and deals " + x;
+            const activity2 = "Player attacks and deals " + y;
+            const battleList = document.querySelector("#battles");
+            
+            const attacks1 = document.createElement("li");
+            attacks1.innerText = activity1;
+            battleList.appendChild(attacks1);
+            
+            const attacks2 = document.createElement("li");
+            attacks2.innerText = activity2;
+            battleList.appendChild(attacks2);
+            
+            // if(v1 = 0){
+            //     alert("Game Over, you won!");
+            // } else {
+            //     alert("Game Over, Monster won!");
+            // }
+            
+            // var yy = v1 - x;
+            // document.getElementById("oo").innerHTML = yy;
+        }
+        
+        function increase() {
+            var v2 = document.getElementById('p2').value;
+            if(v2 < 100){                    
+                var y = defineMinMax(2,25);
+                
+                for (let i = 0; i <= 2; i++) {
+                    document.getElementById("p2").value= v2 + y;
+                }
+                
+                const activities = document.getElementById("history-part-1").innerHTML + " " + y;
+                const battleList = document.querySelector("#battles");
+                
+                const heal = document.createElement("li");
+                heal.innerText = activities;
+                battleList.appendChild(heal);
+            }
+            
+            
+            // var yy = v1 - x;
+            // document.getElementById("oo").innerHTML = yy;
+        }
+        
+        function specialAttack() {
+            var v1=document.getElementById('p1').value;
+            var v2=document.getElementById('p2').value;
+            var result = (Math.abs(v1 - v2) / v1) * 100;
+            
+            if(result > 20 && v1 > v2){
+                var y = defineMinMax(2,25);
+                document.getElementById("p1").value= v1 - y - v2 * 0.8;
+                
+                //checking the values    
+                // document.getElementById("o").innerHTML = result;
+                // document.getElementById("oo").innerHTML = v1;
+                // document.getElementById("ooo").innerHTML = v2;
+            }
+        }
+        
+        function giveUp(){
+            v1=document.getElementById('p2').value = 0;
+            
+            document.getElementById("lastTitle").innerText = "Game Over";
+            document.getElementById('battles').innerText = "Monster Won !";
+            
+            const newBtn = document.getElementById("history-part-1").innerHTML + " " + y;
+            const btnList = document.querySelector("#btnn");
+            
+            const newGameBtn = document.createElement("button");
+            newGameBtn.innerText = newBtn;
+            btnList.appendChild(newGameBtn);
+        }
+    </script>
+</head>
+<body>
+    
+    <div id="myTitle">
+        <h1 id="o">Kill The Monster</h1>
+    </div>
+    
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="container">
+            
+            <div id="monsterHealth">
+                <div><h2 id="oo">Monster Health</h2></div>
+                <div>
+                    <div id=""><progress value="100" max="100" id="p1">100%</progress></div>
+                </div>
+            </div>
+            
+            <div id="yourHealth">
+                <div><h2 id="ooo">Your Health</h2></div>
+                <div><progress value="100" max="100" id="p2">100%</progress></div>
+            </div>
+            
+            <div style="margin: 25px 0px; display: flex; justify-content: center; align-items: center;">
+                <div id="btns">
+                    <div>
+                        <input type="button" value="ATTACK" onclick="decrease()">
+                    </div>
+                    <div>
+                        <input type="button" value="SPECIAL ATTACK" onclick="specialAttack()">
+                    </div>
+                    <div>
+                        <input type="button" value="HEAL" onclick="increase()">
+                    </div>
+                    <div>
+                        <input type="button" value="GIVE UP" onclick="giveUp()">
+                    </div>  
+                </div>
+            </div>
+            
+            <div id="history">
+                <div style="margin-bottom: 20px;"><h2 id="lastTitle">Battle log</h2></div>
+                <div id="battle-history">
+                    <ul id="battles"></ul>
+                    <input id="btnn" value="New Game" style="display: none;">
+                </div>
+            </div>
+            <span id="history-part-1" style="display: none;">Player Heals himself for </span>
+        </div>
+    </div>
+</body>
+</html>
