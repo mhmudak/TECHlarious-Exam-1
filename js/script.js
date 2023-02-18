@@ -11,7 +11,6 @@
             document.getElementById("p1").value= v1 - x;
             document.getElementById("p2").value= v2 - y;
             
-            
             const activity1 = "Monster attacks and deals " + y;
             const activity2 = "Player attacks and deals " + x;
             const battleList = document.querySelector("#battles");
@@ -28,31 +27,20 @@
                 document.getElementById("lastTitle").innerText = "Game Over";
                 document.getElementById('battles').innerText = "You Won !";
                 startNewGame();
-                attackBtn.style.pointerEvents = "none";
-                gvupBtn.style.pointerEvents = "none";
-                healBtn.style.pointerEvents = "none";
-                spBtn.style.pointerEvents = "none";
+                hideBtns();
+                
             } else if (document.getElementById('p2').value === 0) {
                 document.getElementById("lastTitle").innerText = "Game Over";
                 document.getElementById('battles').innerText = "Monster Won !";
                 startNewGame();
-                attackBtn.style.pointerEvents = "none";
-                gvupBtn.style.pointerEvents = "none";
-                healBtn.style.pointerEvents = "none";
-                spBtn.style.pointerEvents = "none";
+                hideBtns();
+                
             } else if (document.getElementById('p2').value === document.getElementById('p1').value){
                 document.getElementById("lastTitle").innerText = "Game Over";
-                document.getElementById('battles').innerText = "Tied Game!";
+                document.getElementById('battles').innerText = "It's a draw !";
                 startNewGame();
-                attackBtn.style.pointerEvents = "none";
-                gvupBtn.style.pointerEvents = "none";
-                healBtn.style.pointerEvents = "none";
-                spBtn.style.pointerEvents = "none";
+                hideBtns();
             }
-            
-            
-            // var yy = v1 - x;
-            // document.getElementById("oo").innerHTML = yy;
         }
         
         function increase() {
@@ -91,12 +79,7 @@
             document.getElementById("lastTitle").innerText = "Game Over";
             document.getElementById('battles').innerText = "Monster Won !";
             startNewGame();
-            
-            // var giveUpBtn = document.getElementById("gvupBtn");
-            // giveUpBtn.addEventListener("click", () => {
-                
-            //     gvupBtn.style.pointerEvents = "none";
-            // });
+            hideBtns();
         }
         
         function startNewGame(){
@@ -113,11 +96,17 @@
                 newGameBtn.style.display = "none";
                 document.getElementById("lastTitle").innerText = "Battle log";
                 document.getElementById('battles').innerText = "";
-
-                attackBtn.style.pointerEvents = "initial";
-                gvupBtn.style.pointerEvents = "initial";
-                healBtn.style.pointerEvents = "initial";
-                spBtn.style.pointerEvents = "initial";
+                
+                attackBtn.style.display = "block";
+                gvupBtn.style.display = "block";
+                healBtn.style.display = "block";
+                spBtn.style.display = "block";
             });
         }
         
+        function hideBtns(){
+            attackBtn.style.display = "none";
+            gvupBtn.style.display = "none";
+            healBtn.style.display = "none";
+            spBtn.style.display = "none";
+        }
