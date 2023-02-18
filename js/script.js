@@ -2,6 +2,7 @@
             return Math.floor(Math.random() * (max - min)) + min;
         }
         
+        // Attack function
         function decrease() {
             var v1=document.getElementById('p1').value;
             var v2=document.getElementById('p2').value;
@@ -13,8 +14,9 @@
             
             const activity1 = "Monster attacks and deals " + y;
             const activity2 = "Player attacks and deals " + x;
+
             const battleList = document.querySelector("#battles");
-            
+
             const attacks1 = document.createElement("li");
             attacks1.innerText = activity1;
             battleList.appendChild(attacks1);
@@ -43,6 +45,7 @@
             }
         }
         
+        // Heal function
         function increase() {
             var v2 = document.getElementById('p2').value;
             if(v2 < 100){                    
@@ -73,7 +76,6 @@
         }
         
         function giveUp(){
-            document.getElementById('p1').value;
             document.getElementById('p2').value = 0;
             
             document.getElementById("lastTitle").innerText = "Game Over";
