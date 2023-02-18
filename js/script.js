@@ -28,10 +28,26 @@
                 document.getElementById("lastTitle").innerText = "Game Over";
                 document.getElementById('battles').innerText = "You Won !";
                 startNewGame();
+                attackBtn.style.pointerEvents = "none";
+                gvupBtn.style.pointerEvents = "none";
+                healBtn.style.pointerEvents = "none";
+                spBtn.style.pointerEvents = "none";
             } else if (document.getElementById('p2').value === 0) {
                 document.getElementById("lastTitle").innerText = "Game Over";
                 document.getElementById('battles').innerText = "Monster Won !";
                 startNewGame();
+                attackBtn.style.pointerEvents = "none";
+                gvupBtn.style.pointerEvents = "none";
+                healBtn.style.pointerEvents = "none";
+                spBtn.style.pointerEvents = "none";
+            } else if (document.getElementById('p2').value === document.getElementById('p1').value){
+                document.getElementById("lastTitle").innerText = "Game Over";
+                document.getElementById('battles').innerText = "Tied Game!";
+                startNewGame();
+                attackBtn.style.pointerEvents = "none";
+                gvupBtn.style.pointerEvents = "none";
+                healBtn.style.pointerEvents = "none";
+                spBtn.style.pointerEvents = "none";
             }
             
             
@@ -76,10 +92,10 @@
             document.getElementById('battles').innerText = "Monster Won !";
             startNewGame();
             
-            // var giveUpBtn = document.getElementById("gvup");
+            // var giveUpBtn = document.getElementById("gvupBtn");
             // giveUpBtn.addEventListener("click", () => {
                 
-            //     gvup.style.pointerEvents = "none";
+            //     gvupBtn.style.pointerEvents = "none";
             // });
         }
         
@@ -97,6 +113,11 @@
                 newGameBtn.style.display = "none";
                 document.getElementById("lastTitle").innerText = "Battle log";
                 document.getElementById('battles').innerText = "";
+
+                attackBtn.style.pointerEvents = "initial";
+                gvupBtn.style.pointerEvents = "initial";
+                healBtn.style.pointerEvents = "initial";
+                spBtn.style.pointerEvents = "initial";
             });
         }
         
