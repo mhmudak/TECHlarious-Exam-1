@@ -12,8 +12,8 @@
             document.getElementById("p2").value= v2 - y;
             
             
-            const activity1 = "Monster attacks and deals " + x;
-            const activity2 = "Player attacks and deals " + y;
+            const activity1 = "Monster attacks and deals " + y;
+            const activity2 = "Player attacks and deals " + x;
             const battleList = document.querySelector("#battles");
             
             const attacks1 = document.createElement("li");
