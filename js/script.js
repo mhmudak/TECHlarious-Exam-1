@@ -1,6 +1,4 @@
-        function defineMinMax(min, max) {
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
+        const defineMinMax = (min, max) => Math.floor(Math.random() * (max - min)) + min;
         
         // Attack function
         function decrease() {
